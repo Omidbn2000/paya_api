@@ -6,4 +6,5 @@ passlib==1.7.4
 python-jose[cryptography]==3.3.0
 bcrypt==4.0.1
 python-dotenv==1.0.0
-# DON'T include pywin32 - it's Windows-only!
+pydantic==2.5.0
+pydantic-core==2.14.5

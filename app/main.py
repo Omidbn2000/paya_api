@@ -1,3 +1,4 @@
+# app/main.py
 from fastapi import FastAPI
 from app.database import Base, engine
 from app.routers import auth, patients
@@ -16,7 +17,7 @@ app = FastAPI(
 # Allow all origins (for testing/development)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from app.database import Base, engine
 from app.routers import auth, patients
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -11,13 +12,11 @@ app = FastAPI(
     description="A simple API for managing patient houses with authentication",
     version="1.0.0"
 )
+
+# Allow all origins (for testing/development)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5000",
-        "http://localhost:12091",
-        "*" # for test
-    ],
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

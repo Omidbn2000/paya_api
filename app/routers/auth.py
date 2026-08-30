@@ -18,6 +18,7 @@ from app.auth import (
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
+# ✅ CORRECT - No Field() usage here
 @router.post("/login")
 async def login(
     form_data: OAuth2PasswordRequestForm = Depends(),

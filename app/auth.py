@@ -1,4 +1,3 @@
-# app/auth.py
 from datetime import datetime, timedelta
 from typing import Optional
 from jose import JWTError, jwt
@@ -71,6 +70,3 @@ async def get_current_user(
     if user is None:
         raise credentials_exception
     return user
-
-# ❌ REMOVE ANY LOGIN/SIGNUP FUNCTIONS FROM THIS FILE!
-# They should only be in app/routers/auth.py

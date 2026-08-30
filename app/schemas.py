@@ -6,6 +6,8 @@ from typing import Optional, List
 class UserBase(BaseModel):
     username: str = Field(..., min_length=3, max_length=50)
     phone_number: str = Field(..., min_length=10, max_length=15)
+    full_name: Optional[str] = None
+    role: Optional[str] = "user"
 
 class UserCreate(UserBase):
     password: str = Field(..., min_length=6, max_length=100)
